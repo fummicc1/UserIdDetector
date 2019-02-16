@@ -41,11 +41,9 @@ class Model {
         return Observable.create({ (obserber) -> Disposable in
             
             Firestore.firestore().collection("Users").document(user.id).setData([
-                "id": user.id,
                 "name": user.name
             ]) { error in
                 if error == nil {
-                    obserber.onNext(())
                     obserber.onCompleted()
                 } else {
                     obserber.onError(error!)

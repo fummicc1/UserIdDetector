@@ -28,14 +28,13 @@ class ViewController: UIViewController {
         viewModel.tableViewObservable.bind(to: reloadData).disposed(by: disposeBag)
         
         viewModel.textFieldObservable.bind(to: textField.rx.text).disposed(by: disposeBag)
-
-//        self.viewModel.buttonObservable.bind(to: self.createUserButton.rx.tap)
         
-//
-//        viewModel.buttonObservable.bind { (observable) -> Disposable in
-//
-//        }
-がr        
+//        viewModel.buttonObservable.bind(to: createUserButton.rx.tap.asObservable())
+        
+        createUserButton.rx.tap.subscribe { _ in
+            self.viewModel.didTapCreateButton()
+        }.disposed(by: disposeBag)
+        
     }
 }
 

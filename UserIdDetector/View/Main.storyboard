@@ -18,17 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー検索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmH-6S-Eej">
-                                <rect key="frame" x="30" y="60" width="315" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="vC6-db-4xi"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-vd-OBN">
-                                <rect key="frame" x="30" y="170" width="315" height="467"/>
+                                <rect key="frame" x="30" y="155" width="315" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="UM4-vd-OqJ"/>
@@ -72,20 +63,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waV-yc-4Ie">
+                                <rect key="frame" x="112.5" y="25" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="muV-ql-ron"/>
+                                    <constraint firstAttribute="width" constant="150" id="svN-lc-Twx"/>
+                                </constraints>
+                                <state key="normal" title="ユーザー作成"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー検索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmH-6S-Eej">
+                                <rect key="frame" x="30" y="95" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vC6-db-4xi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rhz-vd-OBN" secondAttribute="trailing" constant="30" id="0za-Ps-aIF"/>
+                            <constraint firstItem="dmH-6S-Eej" firstAttribute="top" secondItem="waV-yc-4Ie" secondAttribute="bottom" constant="20" id="9Gz-VK-5IS"/>
                             <constraint firstItem="rhz-vd-OBN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Kht-82-9dm"/>
-                            <constraint firstItem="dmH-6S-Eej" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Pb8-cZ-fTE"/>
-                            <constraint firstItem="rhz-vd-OBN" firstAttribute="top" secondItem="dmH-6S-Eej" secondAttribute="bottom" constant="50" id="ePh-it-01q"/>
+                            <constraint firstItem="waV-yc-4Ie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d5w-bO-BSG"/>
+                            <constraint firstItem="rhz-vd-OBN" firstAttribute="top" secondItem="dmH-6S-Eej" secondAttribute="bottom" constant="20" id="eHS-Tp-tnN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rhz-vd-OBN" secondAttribute="bottom" constant="30" id="emW-Ch-4ID"/>
                             <constraint firstItem="dmH-6S-Eej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="lA8-fY-Rxp"/>
+                            <constraint firstItem="waV-yc-4Ie" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="phv-ea-y16"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dmH-6S-Eej" secondAttribute="trailing" constant="30" id="y2L-tU-MaM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="createUserButton" destination="waV-yc-4Ie" id="htB-fk-Pni"/>
                         <outlet property="tableView" destination="rhz-vd-OBN" id="Df2-Xc-n4N"/>
                         <outlet property="textField" destination="dmH-6S-Eej" id="LZ7-OT-r9i"/>
                     </connections>

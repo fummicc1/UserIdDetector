@@ -13,10 +13,17 @@ import RxSwift
 class ViewModel {
     
     private let model: Model // ここは実際は抽象に依存させる。
+    private let disposeBag = DisposeBag()
     
-    private let _users = BehaviorRelay<[User]>(value: [])
+    private let _users = BehaviorSubject<[User]>(value: [])
     var users: [User] {
-        return _users.value
+        do {
+            return try _users.value()
+        } catch {
+            print(error)
+        }
+        
+        return []
     }
     
     var buttonObservable: Observable<Void>!
@@ -32,6 +39,8 @@ class ViewModel {
             return text!
         })
         
+        self.tableViewObservable = _users.map{ _ in }
+        
         self.buttonObservable = didTapEvent.asObservable()
         
     }
@@ -41,7 +50,7 @@ class ViewModel {
         model.createUser(user: User(id: IdGenerator.setId(length: 6), name: "user\(users.count+1)")).subscribe(
             { result in
                 print("ユーザー登録できました！")
-        })
+        }).disposed(by: disposeBag)
     }
     
 }

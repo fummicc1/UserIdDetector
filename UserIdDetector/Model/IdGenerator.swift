@@ -16,7 +16,7 @@ class IdGenerator {
         
         var id = ""
         
-        for _ in 0..<base.count {
+        for _ in 0..<length {
             let _value = Int.random(in: 0..<base.count)
             id.append(base[base.index(base.startIndex, offsetBy: _value)])
         }
