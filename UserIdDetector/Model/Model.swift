@@ -23,12 +23,31 @@ class Model {
 //
 //    }
     
-    func detectUser(user: User) -> Observable<[String: Any]> {
+    func detectUser(userId: String ) -> Observable<[User]> {
         
         return Observable.create { (observer) -> Disposable in
             
-            Firestore.firestore().collection("Users").addSnapshotListener { (snapShots, error) in                
-            }
+            Firestore.firestore().collection("Users").whereField("userRef", isEqualTo: Firestore.firestore().collection("Users").document(userId)).addSnapshotListener({ (snapShots, error) in
+                
+                guard let docs = snapShots?.documents else {
+                    observer.onError(error!)
+                    return
+                }
+                
+                var users: [User] = []
+                
+                docs.forEach({ (snap) in
+                    let data = snap.data()
+                    
+                    let _user = User(id: snap.reference.documentID, name: data["name"] as? String ?? "none")
+                    
+                    users.append(_user)
+                    
+                })
+                
+                observer.onNext(users)
+                
+            })
             
             return Disposables.create()
             
@@ -40,8 +59,11 @@ class Model {
         
         return Observable.create({ (obserber) -> Disposable in
             
-            Firestore.firestore().collection("Users").document(user.id).setData([
-                "name": user.name
+            let doc = Firestore.firestore().collection("Users").document(user.id)
+            
+            doc.setData([
+                "name": user.name,
+                "userRef": doc
             ]) { error in
                 if error == nil {
                     obserber.onCompleted()

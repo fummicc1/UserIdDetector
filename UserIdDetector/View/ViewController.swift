@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private lazy var viewModel = ViewModel(textEdited: textField.rx.text.asObservable(),
-                                           didTapEvent: createUserButton.rx.tap)
+                                           didTapEvent: createUserButton.rx.tap, didTextChanged: textField.rx.controlEvent(UIControlEvents.editingChanged).asObservable())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,20 @@ extension ViewController {
             _me.tableView.reloadData()
         }
     }
+}
+
+extension ViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! TableViewCell
+        cell.nameLabel.text = viewModel.users[indexPath.row].name
+        cell.userIdLabel.text = viewModel.users[indexPath.row].id
+        
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.users.count
+    }
     
 }

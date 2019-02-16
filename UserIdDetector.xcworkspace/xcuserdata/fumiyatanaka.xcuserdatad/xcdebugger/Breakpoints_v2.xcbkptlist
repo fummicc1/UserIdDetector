@@ -9,78 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UserIdDetector/ViewModel/ViewModel.swift"
-            timestampString = "572022349.761066"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "didTapCreateButton()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "UserIdDetector/Model/Model.swift"
-            timestampString = "572022349.761147"
+            timestampString = "572026606.515797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "createUser(user:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "detectUser(userId:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "UserIdDetector.Model.createUser(user: UserIdDetector.User) -&gt; RxSwift.Observable&lt;()&gt;"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;UserIdDetector.User&gt;&gt;) -&gt; RxSwift.Disposable in UserIdDetector.Model.detectUser(userId: Swift.String) -&gt; RxSwift.Observable&lt;Swift.Array&lt;UserIdDetector.User&gt;&gt;"
                   moduleName = "UserIdDetector"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fumiyatanaka/Desktop/13inch_Working/UserIdDetector/UserIdDetector/Model/Model.swift"
-                  timestampString = "572022349.958956"
+                  timestampString = "572026423.531993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "43">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "27">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;()&gt;) -&gt; RxSwift.Disposable in UserIdDetector.Model.createUser(user: UserIdDetector.User) -&gt; RxSwift.Observable&lt;()&gt;"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;UserIdDetector.User&gt;&gt;) -&gt; RxSwift.Disposable in UserIdDetector.Model.detectUser(userId: Swift.String) -&gt; RxSwift.Observable&lt;Swift.Array&lt;UserIdDetector.User&gt;&gt;"
                   moduleName = "UserIdDetector"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fumiyatanaka/Desktop/13inch_Working/UserIdDetector/UserIdDetector/Model/Model.swift"
-                  timestampString = "572022349.960903"
+                  timestampString = "572026423.534059"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "35">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "69">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UserIdDetector/ViewModel/ViewModel.swift"
-            timestampString = "572022349.761541"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "didTapCreateButton()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
